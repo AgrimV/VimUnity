@@ -1,6 +1,13 @@
 #!/bin/bash
 
-cd ~/Documents/Unity/$1
+if [ -z "$UNITYPROJECTPATH" ];
+then
+	read -p "Enter absolute path to Unity Projects : " path_to_projects
+	echo export UNITYPROJECTPATH=\"$path_to_projects\" >> ~/.bashrc
+	$UNITYPROJECTPATH=$path_to_projects
+fi
+
+cd $UNITYPROJECTPATH/$1
 shift
 if [ ! -z $1 ];
 then
@@ -15,5 +22,5 @@ then
 else
     to_open=$(find Assets/Scripts/ -type f -name "*.cs")
 fi
-    
+ 
 vim -p $to_open 
