@@ -10,18 +10,26 @@
 3. Move the *unity.sh* file to your home directory
 `mv unity.sh ~/` or `mv unity.sh /home/user/`
 
-4. Add the following line to your .bashrc : `alias viu=./unity.sh`
+4. Set the `$UNITYROJECTPATH`  in your .bashrc
+
+    The script automatically sets it in case the variable is not present.
+
+5. (Optional)
+
+    Add the following line to your .bashrc : `alias viu=./unity.sh`
 
     You may use any string in place of **viu**. This will be used to call the script from the terminal.
 
-5. The syntax to open Unity C# scripts in Vim is :
+6. The syntax to open Unity C# scripts in Vim is :
 
-    `viu <project_name> [options] <files_to_open>`
+    `viu <project_name> [options] <files_to_open>` or,
+    
+    `~/.unity.sh <project_name> [options] <files_to_open>`
     
     
 ## What It Does
-- It opens C# Scripts from the directory `/home/user/Documents/Unity/project_name/Assets/Scripts/` as individual tabs in Vim.
-- The terminal stays in the `project_name` directory in order to load .sln files for autocompletion in C# if available.
+- It opens C# Scripts from the directory `$UNITYPROJECTPATH/project_name/Assets/Scripts/` as individual tabs in Vim.
+- The terminal stays in the `project_name` directory in order to load .sln files for autocompletion in C#, if available.
 - It can open a new C# Script if specified at the aforementioned path.
 
 ## Options
