@@ -24,7 +24,7 @@
 
     `viu <project_name> [options] <files_to_open>` or,
     
-    `~/.unity.sh <project_name> [options] <files_to_open>`
+    `~/unity.sh <project_name> [options] <files_to_open>`
     
     
 ## What It Does
